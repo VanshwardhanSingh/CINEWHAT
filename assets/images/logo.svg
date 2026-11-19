@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" width="28" height="28" fill="none">
+  <!-- Outer film reel rim -->
+  <circle cx="14" cy="14" r="13" stroke="#D7264D" stroke-width="2" fill="#191A22" />
+  <!-- Center hub -->
+  <circle cx="14" cy="14" r="4.5" fill="#D7264D" />
+  <circle cx="14" cy="14" r="2" fill="#101116" />
+  <!-- Aperture sprocket holes -->
+  <circle cx="14" cy="5" r="1.8" fill="#F5F3F0" />
+  <circle cx="14" cy="23" r="1.8" fill="#F5F3F0" />
+  <circle cx="5" cy="14" r="1.8" fill="#F5F3F0" />
+  <circle cx="23" cy="14" r="1.8" fill="#F5F3F0" />
+</svg>
+

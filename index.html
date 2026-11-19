@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CINEWHAT - A focused, responsive movie discovery and recommendation website.">
+  <title>CINEWHAT — Movie Recommendation Website</title>
+
+  <!-- Google Fonts: Outfit (Headings) & Inter (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Core Modular Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       1. NAVBAR COMPONENT
+       ======================================================================== -->
+  <header class="site-header" role="banner">
+    <div class="container navbar">
+      <a href="index.html" class="brand-logo" aria-label="CINEWHAT Home">
+        <svg class="brand-icon" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+          <circle cx="14" cy="14" r="13" stroke="currentColor" stroke-width="2" fill="#191A22" />
+          <circle cx="14" cy="14" r="4.5" fill="currentColor" />
+          <circle cx="14" cy="14" r="2" fill="#101116" />
+          <circle cx="14" cy="5" r="1.8" fill="#F5F3F0" />
+          <circle cx="14" cy="23" r="1.8" fill="#F5F3F0" />
+          <circle cx="5" cy="14" r="1.8" fill="#F5F3F0" />
+          <circle cx="23" cy="14" r="1.8" fill="#F5F3F0" />
+        </svg>
+        <span>CINE<span class="brand-accent">WHAT</span></span>
+      </a>
+
+      <!-- Desktop & Tablet Navigation Links -->
+      <nav class="nav-links" id="main-nav" aria-label="Main Navigation">
+        <a href="#home" class="nav-link is-active" aria-current="page">Home</a>
+        <a href="#popular" class="nav-link">Popular</a>
+        <a href="#genres" class="nav-link">Genres</a>
+      </nav>
+
+      <!-- Nav Actions (Favourites & Mobile Menu Trigger) -->
+      <div class="nav-actions">
+        <button type="button" class="btn-favourites" id="fav-drawer-trigger" aria-label="View Favourites" aria-expanded="false" aria-controls="favourites-drawer">
+          <svg class="icon-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          <span class="btn-label">Favourites</span>
+          <span class="favourites-badge" id="fav-count-badge" aria-label="0 favourites saved">0</span>
+        </button>
+
+        <button type="button" class="mobile-nav-toggle" id="mobile-nav-btn" aria-label="Toggle Navigation Menu" aria-expanded="false" aria-controls="main-nav">
+          <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       MAIN VIEW CONTAINER
+       ======================================================================== -->
+  <main id="main-content" role="main">
+
+    <!-- 2. HERO SECTION & SEARCH INTERFACE -->
+    <section class="hero-section" id="home" aria-labelledby="hero-heading">
+      <div class="container hero-content">
+        <h1 class="hero-title" id="hero-heading">Discover Your Next Cinematic Story</h1>
+        <p class="hero-description">
+          A focused movie discovery and recommendation platform. Browse popular films, explore by genre, and get instant recommendations—free, lightweight, and account-free.
+        </p>
+
+        <!-- Search Bar Interface -->
+        <form class="search-form" id="search-form" role="search" aria-label="Movie Search">
+          <div class="search-input-wrapper" style="display:flex; align-items:center; flex:1; gap:8px;">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input 
+              type="search" 
+              class="search-input" 
+              id="search-input" 
+              placeholder="Search movies by title (e.g. Inception, Dune, Oppenheimer)..." 
+              autocomplete="off"
+              aria-label="Search movies by title"
+            >
+          </div>
+          <button type="submit" class="search-button" id="search-button" aria-label="Submit Movie Search">
+            Search
+          </button>
+        </form>
+
+        <!-- Popular Search Suggestions Elements -->
+        <div class="search-suggestions" aria-label="Popular search suggestions">
+          <span class="suggestion-label">Trending:</span>
+          <button type="button" class="suggestion-tag">Interstellar</button>
+          <button type="button" class="suggestion-tag">Oppenheimer</button>
+          <button type="button" class="suggestion-tag">Dune: Part Two</button>
+          <button type="button" class="suggestion-tag">Parasite</button>
+          <button type="button" class="suggestion-tag">Whiplash</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. GENRE EXPLORATION SECTION -->
+    <section class="genres-section" id="genres" aria-labelledby="genres-heading">
+      <div class="container">
+        <div class="genres-header">
+          <h2 class="genres-title" id="genres-heading">
+            <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:var(--primary-accent)">
+              <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+              <polyline points="2 17 12 22 22 17"></polyline>
+              <polyline points="2 12 12 17 22 12"></polyline>
+            </svg>
+            Explore Genres
+          </h2>
+          <span class="genres-subtitle">Popular categories</span>
+        </div>
+
+        <!-- Horizontal Genre Track -->
+        <div class="genre-track" role="region" aria-label="Genre categories">
+          <button type="button" class="genre-badge is-active">All</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. POPULAR MOVIES SECTION -->
+    <section class="movies-section" id="popular" aria-labelledby="popular-heading">
+      <div class="container">
+        <div class="section-heading-bar">
+          <div>
+            <h2 class="section-title" id="popular-heading">Popular Movies</h2>
+            <p class="section-meta">Curated popular titles from The Movie Database</p>
+          </div>
+          <span class="section-meta" id="results-count">Loading live feed...</span>
+        </div>
+
+        <!-- Responsive Movie Grid -->
+        <div class="movie-grid" id="movie-grid" aria-live="polite" aria-busy="true">
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================
+       5. MOVIE DETAILS MODAL COMPONENT (PHASE 5)
+       ======================================================================== -->
+  <div class="modal-backdrop" id="movie-details-modal" role="dialog" aria-modal="true" aria-labelledby="modal-movie-title" aria-hidden="true">
+    <div class="modal-dialog" id="modal-dialog" tabindex="-1">
+      <button type="button" class="modal-close-btn" id="modal-close-btn" aria-label="Close movie details dialog">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <!-- Dynamic content container populated by js/app.js & js/ui.js -->
+      <div id="modal-dynamic-container">
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       6. FAVOURITES DRAWER COMPONENT (MODULE 5 - PHASE 6)
+       ======================================================================== -->
+  <div class="drawer-backdrop" id="favourites-drawer-backdrop" aria-hidden="true">
+    <aside class="drawer-panel" id="favourites-drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-heading" tabindex="-1">
+      <div class="drawer-header">
+        <div class="drawer-title-group">
+          <h2 class="drawer-title" id="drawer-heading">Your Favourites</h2>
+          <span class="drawer-badge" id="drawer-fav-count">0</span>
+        </div>
+        <button type="button" class="drawer-close-btn" id="drawer-close-btn" aria-label="Close favourites drawer">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Drawer Content (List of saved movies or empty state) -->
+      <div class="drawer-body" id="drawer-dynamic-body">
+      </div>
+    </aside>
+  </div>
+
+  <!-- ========================================================================
+       7. FOOTER COMPONENT
+       ======================================================================== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-content">
+      <div class="footer-top">
+        <div class="footer-brand-info">
+          <span class="footer-logo">CINE<span class="brand-accent">WHAT</span></span>
+          <p class="footer-description">
+            A lightweight, responsive movie discovery website designed for simple, fast movie browsing and content-based recommendations.
+          </p>
+        </div>
+        <div class="footer-attribution">
+          <p><span class="footer-author">Academic Project:</span> Vansh Wardhan Singh</p>
+          <p>Enrollment: K27661 • B.Tech CSE (AI/ML)</p>
+          <p>Career Point University — Academic Year 2025–2029</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="tmdb-disclaimer">
+          This product uses the TMDb API but is not endorsed or certified by TMDb.
+        </p>
+        <p class="footer-copyright">
+          &copy; 2026 CINEWHAT. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Application Script (ES6 Modules) -->
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

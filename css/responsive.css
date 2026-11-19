@@ -1,0 +1,365 @@
+/* ==========================================================================
+   CINEWHAT - RESPONSIVE LAYOUT SPECIFICATION
+   Breakpoints: Mobile (320-767px), Tablet (768-1023px), Desktop (1024px+)
+   Phase 6: Favourites drawer mobile adaptations
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   TABLET BREAKPOINT (768px to 1023px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1023px) {
+  .hero-title {
+    font-size: 2.25rem;
+  }
+
+  .movie-grid {
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: var(--space-md);
+  }
+
+  .nav-links {
+    gap: var(--space-md);
+  }
+
+  /* Modal Tablet Adjustments */
+  .modal-dialog {
+    max-width: 720px;
+  }
+
+  .modal-poster-col {
+    width: 180px;
+  }
+
+  .modal-backdrop-header {
+    height: 220px;
+  }
+
+  .modal-movie-title {
+    font-size: 1.65rem;
+  }
+
+  /* Drawer Tablet Adjustments */
+  .drawer-panel {
+    max-width: 400px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   MOBILE BREAKPOINT (320px to 767px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 767px) {
+  :root {
+    --header-height: 64px;
+  }
+
+  /* Sticky Navbar on Mobile */
+  .nav-links {
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    background-color: var(--bg-surface);
+    border-bottom: 1px solid var(--border-color);
+    padding: var(--space-md);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    display: none;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .nav-links.is-open {
+    display: flex;
+  }
+
+  .nav-link {
+    width: 100%;
+    padding: 10px var(--space-sm);
+    font-size: 1rem;
+    border-radius: var(--radius-sm);
+  }
+
+  .nav-link.is-active::after {
+    left: var(--space-sm);
+    right: auto;
+    width: 24px;
+    bottom: 4px;
+  }
+
+  .mobile-nav-toggle {
+    display: inline-flex;
+  }
+
+  /* Hero Section */
+  .hero-section {
+    padding-top: var(--space-2xl);
+    padding-bottom: var(--space-xl);
+  }
+
+  .hero-title {
+    font-size: 1.875rem;
+    line-height: 1.2;
+    margin-bottom: var(--space-sm);
+  }
+
+  .hero-description {
+    font-size: 0.9375rem;
+    margin-bottom: var(--space-lg);
+  }
+
+  /* Search Bar Stacking */
+  .search-form {
+    flex-direction: column;
+    padding: var(--space-xs);
+    gap: var(--space-xs);
+    border-radius: var(--radius-md);
+  }
+
+  .search-input-wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: var(--space-xs);
+    padding-left: var(--space-xs);
+  }
+
+  .search-button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+  }
+
+  .search-suggestions {
+    font-size: 0.75rem;
+    gap: var(--space-2xs);
+  }
+
+  /* Genre Exploration */
+  .genres-section {
+    padding-top: var(--space-md);
+    padding-bottom: var(--space-md);
+  }
+
+  .genres-title {
+    font-size: 1rem;
+  }
+
+  .genres-subtitle {
+    display: none;
+  }
+
+  .genre-badge {
+    padding: 5px 12px;
+    font-size: 0.75rem;
+  }
+
+  /* Popular Movies Section */
+  .movies-section {
+    padding-top: var(--space-lg);
+    padding-bottom: var(--space-2xl);
+  }
+
+  .section-heading-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2xs);
+    margin-bottom: var(--space-md);
+  }
+
+  .section-title {
+    font-size: 1.35rem;
+  }
+
+  .section-meta {
+    font-size: 0.8125rem;
+  }
+
+  /* 2-Column Grid on Mobile */
+  .movie-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .movie-card__content {
+    padding: 10px;
+  }
+
+  .movie-card__title {
+    font-size: 0.875rem;
+    line-height: 1.3;
+    -webkit-line-clamp: 1;
+  }
+
+  .movie-card__meta-row {
+    font-size: 0.75rem;
+  }
+
+  .movie-card__fav-btn {
+    width: 32px;
+    height: 32px;
+    top: 6px;
+    right: 6px;
+  }
+
+  .movie-card__fav-btn .icon-heart {
+    width: 15px;
+    height: 15px;
+  }
+
+  .rating-badge {
+    padding: 2px 6px;
+    font-size: 0.75rem;
+    bottom: 6px;
+    left: 6px;
+  }
+
+  /* --------------------------------------------------------------------------
+     MODAL MOBILE ADAPTATION
+     -------------------------------------------------------------------------- */
+  .modal-backdrop {
+    padding: 8px;
+    align-items: flex-end;
+  }
+
+  .modal-dialog {
+    max-height: 92vh;
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+  }
+
+  .modal-close-btn {
+    top: 10px;
+    right: 10px;
+    width: 34px;
+    height: 34px;
+  }
+
+  .modal-backdrop-header {
+    height: 160px;
+  }
+
+  .modal-body-content {
+    padding: var(--space-md);
+    gap: var(--space-lg);
+  }
+
+  .modal-columns {
+    flex-direction: column;
+    align-items: center;
+    margin-top: -60px;
+    gap: var(--space-md);
+    text-align: center;
+  }
+
+  .modal-poster-col {
+    width: 140px;
+  }
+
+  .modal-movie-title {
+    font-size: 1.35rem;
+  }
+
+  .modal-meta-row {
+    justify-content: center;
+    font-size: 0.8125rem;
+  }
+
+  .modal-genres-list {
+    justify-content: center;
+  }
+
+  .modal-overview-text {
+    text-align: left;
+    font-size: 0.875rem;
+  }
+
+  .modal-recommendations__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .modal-recommendations__title {
+    font-size: 1.125rem;
+  }
+
+  .recommendation-card {
+    width: 120px;
+  }
+
+  /* --------------------------------------------------------------------------
+     DRAWER MOBILE ADAPTATION (PHASE 6)
+     -------------------------------------------------------------------------- */
+  .drawer-panel {
+    max-width: 100%; /* Spans full width on mobile viewports */
+  }
+
+  .fav-drawer-item__poster {
+    width: 60px;
+  }
+
+  .fav-drawer-item__title {
+    font-size: 0.875rem;
+  }
+
+  /* Footer */
+  .footer-top {
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-xs);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   SMALL MOBILE BREAKPOINT (< 360px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 359px) {
+  .brand-logo {
+    font-size: 1.25rem;
+  }
+
+  .btn-favourites span.btn-label {
+    display: none;
+  }
+
+  .btn-favourites {
+    padding: 6px 10px;
+  }
+
+  .nav-actions {
+    gap: 6px;
+  }
+
+  .movie-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .movie-card__content {
+    padding: 8px 6px;
+  }
+
+  .movie-card__title {
+    font-size: 0.8125rem;
+  }
+
+  .recommendation-card {
+    width: 110px;
+  }
+
+  .modal-dialog {
+    max-height: 95vh;
+  }
+
+  .modal-poster-col {
+    width: 120px;
+  }
+
+  .modal-body-content {
+    padding: 12px 8px;
+  }
+}
